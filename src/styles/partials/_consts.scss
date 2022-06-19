@@ -1,0 +1,23 @@
+// MEDIA QUERIES DEFAULT
+$tablet-width: 768px;
+$desktop-width: 1440px;
+
+$media-mobile: 'only screen and (max-width : 799px)';
+$media-tablet: 'only screen and (min-width : 800px) and (max-width : 1439px)';
+$media-tablet-desktop: 'only screen and (min-width : 800px)';
+$media-desktop: 'only screen and (min-width : 1440px)';
+$media-mobile-and-tablet: 'only screen and (max-width : 1439)';
+
+// COLORS
+$color-black: #000000;
+$color-white: #ffffff;
+
+$color-primary: #1a18f7;
+$color-dark: #0c0c0c;
+
+$z-index-topbar: 10;
+$z-index-menu: 11;
+
+//SPACINGS
+$padding-base: 36px;
+$padding-base-mobile: 16px;

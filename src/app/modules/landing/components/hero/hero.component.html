@@ -1,0 +1,18 @@
+<div class="-hero">
+  <div class="-title">{{ case?.title }}</div>
+
+  <div class="-actions">
+
+    <a [routerLink]="case?.routerLink" class="hide-mobile">
+      <button class="dept-btn dept-btn--black">VIEW CASE</button>
+    </a>
+  </div>
+
+</div>
+
+<div class="-actions-mobile">
+
+  <a [routerLink]="case?.routerLink" class="hide-tablet-desktop">
+    <button class="dept-btn dept-btn--black w-100">VIEW CASE</button>
+  </a>
+</div>

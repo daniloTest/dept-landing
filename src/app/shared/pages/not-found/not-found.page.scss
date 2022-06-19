@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100vw;
+  text-align: center;
+}
+
+.-container {
+  width: 100%;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+
+  .-action {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    button {
+      margin: 0 auto;
+    }
+  }
+}

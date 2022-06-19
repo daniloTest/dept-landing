@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import './partials/reset.scss';
+@import './partials/typography.scss';
+@import './partials/consts.scss';
+@import './partials/buttons.scss';
+
+* {
+  font-family: 'Teko', sans-serif;
+}
+
+/* UTILS */
+.hide-mobile {
+  @include mobile {
+    display: none;
+  }
+}
+
+.hide-tablet-desktop {
+  @include tablet-desktop {
+    display: none;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}

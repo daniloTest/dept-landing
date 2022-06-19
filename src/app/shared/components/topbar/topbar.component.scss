@@ -1,0 +1,45 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+
+$topbar-height: 85px;
+$topbar-height-mobile: 56px;
+
+:host {
+  position: fixed;
+  height: $topbar-height;
+  display: block;
+  z-index: $z-index-topbar;
+
+  width: 100%;
+  background-color: transparent;
+  padding: 0 $padding-base;
+
+  box-sizing: border-box;
+
+  @include mobile {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: $topbar-height-mobile;
+    background-color: $color-white;
+    color: $color-black;
+    padding: 0 $padding-base-mobile;
+  }
+}
+
+.-topbar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-black;
+  padding: 30px 0;
+
+  @include mobile {
+    border-bottom: none;
+  }
+
+  .-logo {
+    height: 29px;
+  }
+}

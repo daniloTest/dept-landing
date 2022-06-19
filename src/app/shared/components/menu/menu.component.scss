@@ -1,0 +1,136 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+
+$color-link-separator: #a3a3a3;
+
+.-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color-dark;
+  color: $color-white;
+
+  width: 100vw;
+  height: 100vh;
+  z-index: $z-index-menu;
+  overflow: hidden;
+
+  transition: height 0.3s ease-out;
+
+  overflow-y: auto;
+
+  &.--closed {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    transition: height 0.3s ease-out;
+  }
+}
+
+.-header {
+  padding: 30px $padding-base;
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile {
+    padding: 30px $padding-base-mobile;
+  }
+  .-logo {
+    height: 29px;
+  }
+}
+
+.-content {
+  padding: 30px $padding-base;
+  position: relative;
+
+  @include mobile {
+    padding: 30px $padding-base-mobile;
+  }
+
+  .-pages-menu {
+    padding-top: 30px;
+    @include mobile {
+      padding-top: 0;
+    }
+    .-link-container {
+      display: block;
+      width: 100%;
+      text-align: right;
+      border-bottom: 1px solid $color-link-separator;
+
+      .-page-link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+
+        .-label {
+          font-family: 'Teko', sans-serif;
+          font-size: 60px;
+          line-height: 60px;
+          width: fit-content;
+          padding-top: 11px;
+
+          @include mobile {
+            font-size: 50px;
+            line-height: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .-countries-menu {
+    position: absolute;
+    left: 40px;
+    background-color: $color-dark;
+    padding-right: 20px;
+    min-width: 20%;
+
+    .-title {
+      font-weight: 700 !important;
+      color: rgba($color-white, $alpha: 0.5);
+    }
+
+    .-link {
+      display: block;
+      font-weight: 700 !important;
+      margin: 8px 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .-social-menu {
+    padding: 10px;
+    position: absolute;
+    left: $padding-base;
+    bottom: 0;
+    background-color: $color-dark;
+    min-width: 20%;
+    .-link {
+      display: block;
+      font-weight: 700 !important;
+      margin: 8px 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.link-with-selector {
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    &::before {
+      content: '\25BA';
+      color: $color-white;
+    }
+  }
+}

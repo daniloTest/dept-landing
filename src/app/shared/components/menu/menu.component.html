@@ -1,0 +1,89 @@
+<div class="-menu" [class.--closed]="!isOpen">
+
+  <div class="-header">
+    <img src="assets/icons/dept-logo-white.svg" class="-logo">
+    <button class="dept-btn dept-btn--transparent" (click)="toggleMenu.emit()">
+      <img src="assets/icons/icon__close.svg">
+    </button>
+  </div>
+
+  <div class="-content">
+
+    <nav class="-countries-menu">
+      <div class="-title">Countries</div>
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+        GLOBAL
+      </a>
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+        NEDERLAND
+      </a>
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+        UNITED STATES
+      </a>
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+        IRELAND
+      </a>
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+        UNITED KINGDOM
+      </a>
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+        SCHWEZ
+      </a>
+
+    </nav>
+
+    <!-- PAGES MENU-->
+    <nav class="-pages-menu">
+      <!-- LINK -->
+      <div class="-link-container">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+          <div class="-label">HOME</div>
+        </a>
+      </div>
+      <!-- LINK -->
+      <div class="-link-container">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+          <div class="-label">WORK</div>
+        </a>
+      </div>
+      <!-- LINK -->
+      <div class="-link-container">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+          <div class="-label">CULTURE</div>
+        </a>
+      </div>
+      <!-- LINK -->
+      <div class="-link-container">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+          <div class="-label">SERVICES</div>
+        </a>
+      </div>
+      <!-- LINK -->
+      <div class="-link-container">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+          <div class="-label">PARTNERS</div>
+        </a>
+      </div>
+      <!-- LINK -->
+      <div class="-link-container">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+          <div class="-label">EVENTS</div>
+        </a>
+      </div>
+      <!-- LINK -->
+      <div class="-link-container">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+          <div class="-label">CONTACTS</div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- SOCIAL MENU-->
+    <nav class="-social-menu">
+      <a class="-link">FACEBOOK</a>
+      <a class="-link">TWITTER</a>
+      <a class="-link">INSTAGRAM</a>
+      <a class="-link">LINKEDIN</a>
+    </nav>
+  </div>
+</div>
