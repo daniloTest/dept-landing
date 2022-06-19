@@ -1,6 +1,22 @@
-<app-hero [case]="heroCase"></app-hero>
-sdfa
-ds
-<fieldset><s></s></fieldset>
-dsfa
-sdfa
+<app-hero [case]="cases[0]"></app-hero>
+
+<app-cases-grid [cases]="getSlicedCases(0, 4)"></app-cases-grid>
+<app-cases-featured-grid [cases]="getSlicedCases(4, 3)" featuredPosition="left"></app-cases-featured-grid>
+<app-cases-grid [cases]="getSlicedCases(8, 2)"></app-cases-grid>
+<app-cases-featured-grid [cases]="getSlicedCases(10, 3)" featuredPosition="right"></app-cases-featured-grid>
+
+<div class="line-separator hide-mobile"></div>
+<div class="-quote">
+  <div class="-text">
+    “Dept helped us tell our story through a bold new identity and a robust online experience. To the tone of 60% growth in
+    online bookings in
+    just one month”
+  </div>
+  <div class="-author">
+    MATTIJS TEN BRINK - CEO, TRANSAVIA
+  </div>
+</div>
+
+<app-cases-grid [cases]="getSlicedCases(13, 2)"></app-cases-grid>
+
+<div>clients section</div>

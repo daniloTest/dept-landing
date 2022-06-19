@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-topbar',
@@ -8,10 +8,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TopbarComponent implements OnInit {
 
   @Output() toggleMenu = new EventEmitter<void>();
+  isWhite: boolean = false;
+
+  @Input() set isScroll(value: boolean) {
+    this.isWhite = value;
+  }
+
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

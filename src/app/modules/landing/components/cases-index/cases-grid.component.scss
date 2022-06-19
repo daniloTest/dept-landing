@@ -1,0 +1,20 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+
+:host {
+  padding: 0 21px 50px 21px;
+  display: block;
+}
+
+.-cases-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mobile {
+    display: block;
+  }
+
+  .-case {
+    flex: 1 0 50%;
+  }
+}

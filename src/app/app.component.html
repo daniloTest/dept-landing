@@ -1,7 +1,7 @@
 <app-menu [isOpen]="isMenuOpen" (toggleMenu)="toggleMenu()"></app-menu>
-<app-topbar (toggleMenu)="toggleMenu()"></app-topbar>
+<app-topbar (toggleMenu)="toggleMenu()" [isScroll]="isScroll"></app-topbar>
 
-<div class="page">
+<div class="page" #page (scroll)="onScroll($event)">
 
   <router-outlet></router-outlet>
 </div>

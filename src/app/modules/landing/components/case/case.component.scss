@@ -1,0 +1,62 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+
+$color-subtitle: #939393;
+$padding-normal: 16px;
+$padding-compact: 6px;
+
+:host {
+  width: 100%;
+  display: block;
+  padding: 16px;
+}
+
+.-container {
+  width: 100%;
+  display: block;
+
+  &.--compact {
+    .-industry {
+      padding: $padding-compact 0;
+    }
+    .-title {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+}
+
+.-image {
+  height: 290px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.-industry {
+  padding: $padding-normal 0;
+  font-weight: 700;
+  font-size: 12px;
+  color: $color-subtitle;
+}
+
+.-title {
+  font-family: 'Teko';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 43px;
+}
+
+.-action {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-primary;
+  padding: $padding-normal 0;
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}

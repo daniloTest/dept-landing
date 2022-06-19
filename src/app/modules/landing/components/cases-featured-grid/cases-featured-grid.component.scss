@@ -1,0 +1,32 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+
+.-container {
+  display: flex;
+  width: 100%;
+  gap: 5%;
+  padding: 0 21px;
+
+  @include mobile {
+    flex-direction: column !important;
+  }
+}
+
+.-col {
+  &--featured {
+    flex: 1 1 60%;
+  }
+  &--compact {
+    flex: 1 1 35%;
+  }
+}
+
+.-col--compact {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+
+  @include mobile {
+    padding: 0;
+  }
+}

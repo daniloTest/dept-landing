@@ -4,7 +4,7 @@
 $topbar-height: 85px;
 $topbar-height-mobile: 56px;
 
-:host {
+.-topbar-container {
   position: fixed;
   height: $topbar-height;
   display: block;
@@ -13,8 +13,16 @@ $topbar-height-mobile: 56px;
   width: 100%;
   background-color: transparent;
   padding: 0 $padding-base;
-
   box-sizing: border-box;
+
+  &.--white {
+    background-color: $color-white;
+    color: $color-black;
+
+    .-topbar {
+      border: none;
+    }
+  }
 
   @include mobile {
     position: sticky;

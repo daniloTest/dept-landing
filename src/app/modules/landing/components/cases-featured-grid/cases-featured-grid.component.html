@@ -1,0 +1,15 @@
+<div class="-container" [class.flex-row-reverse]="featuredPosition === 'right'">
+
+  <div class="-col -col--featured">
+
+    <app-case [case]="cases[0]"></app-case>
+  </div>
+
+  <div class="-col -col--compact">
+    <div class="line-separator"></div>
+    <app-case [case]="cases[1]" type="compact" class="-item"></app-case>
+    <div class="line-separator"></div>
+    <app-case [case]="cases[2]" type="compact" class="-item"></app-case>
+    <div class="line-separator"></div>
+  </div>
+</div>

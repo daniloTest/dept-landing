@@ -72,6 +72,7 @@ $color-link-separator: #a3a3a3;
           line-height: 60px;
           width: fit-content;
           padding-top: 11px;
+          color: $color-white;
 
           @include mobile {
             font-size: 50px;
@@ -127,6 +128,11 @@ $color-link-separator: #a3a3a3;
 .link-with-selector {
   cursor: pointer;
   user-select: none;
+  a,
+  a:hover,
+  a:active {
+    color: #fff;
+  }
   &:hover {
     &::before {
       content: '\25BA';
