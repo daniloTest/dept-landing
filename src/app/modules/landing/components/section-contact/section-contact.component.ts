@@ -24,6 +24,8 @@ export class SectionContactComponent implements OnInit {
       this.form.markAllAsTouched();
       return;
     }
+
+    // TODO call EP to send contact
     throw new Error('Funzione non implementata');
   }
 

@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CaseReadDto } from '@library';
+import { CASES_DATA } from 'src/app/library/data/cases.const';
 
 @Component({
   selector: 'app-landing-index',
@@ -9,120 +12,98 @@ import { CaseReadDto } from '@library';
 export class LandingIndexPage implements OnInit {
 
 
-  cases: CaseReadDto[] = [
-    {
-      routerLink: 'XX_1',
-      imageUrl: 'assets/images/cases/image__case-1.jpg',
-      title: 'A Summer island in the Netherlands',
-      category: 'WORK',
-      industry: 'BOL.COM'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    },
-    {
-      routerLink: 'XX_1',
-      imageUrl: 'assets/images/cases/image__case-1.jpg',
-      title: 'A Summer island in the Netherlands',
-      category: 'WORK',
-      industry: 'BOL.COM'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    },
-    {
-      routerLink: 'XX_1',
-      imageUrl: 'assets/images/cases/image__case-1.jpg',
-      title: 'A Summer island in the Netherlands',
-      category: 'WORK',
-      industry: 'BOL.COM'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    },
-    {
-      routerLink: 'XX_1',
-      imageUrl: 'assets/images/cases/image__case-1.jpg',
-      title: 'A Summer island in the Netherlands',
-      category: 'WORK',
-      industry: 'BOL.COM'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    },
-    {
-      routerLink: 'XX_1',
-      imageUrl: 'assets/images/cases/image__case-1.jpg',
-      title: 'A Summer island in the Netherlands',
-      category: 'WORK',
-      industry: 'BOL.COM'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    },
-    {
-      routerLink: 'XX_1',
-      imageUrl: 'assets/images/cases/image__case-1.jpg',
-      title: 'A Summer island in the Netherlands',
-      category: 'WORK',
-      industry: 'BOL.COM'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    },
-    {
-      routerLink: 'XX_1',
-      imageUrl: 'assets/images/cases/image__case-1.jpg',
-      title: 'A Summer island in the Netherlands',
-      category: 'WORK',
-      industry: 'BOL.COM'
-    },
-    {
-      routerLink: 'XX_1',
-      title: 'Not some average banking website',
-      category: 'WORK',
-      industry: 'KEMPEN',
-      imageUrl: 'assets/images/cases/image__case-1.jpg'
-    }
-  ];
+  filtersFG: FormGroup = new FormGroup({
+    industry: new FormControl(''),
+    category: new FormControl('')
+  });
 
+  cases: CaseReadDto[] = [];
+  displayedCases: CaseReadDto[] = [];
 
+  industries: Set<string> = new Set<string>();
+  categories: Set<string> = new Set<string>();
 
-  constructor() { }
+  constructor(
+    private _router: Router,
+    private _activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
 
+    // TODO handle async and loading state
+    this.fetchData();
+    this._buildFilters();
+
+    //on filters change update displayed cases
+    this._listenForFilters();
+
+    // get filter params from url and patch filters
+    this._patchFiltersFromUrl();
+
+
+  }
+
+  fetchData(): void {
+    this.cases = CASES_DATA || [];
+    this.displayedCases = this.cases;
+
+  }
+
+  private _patchFiltersFromUrl(): void {
+    const params = this._activatedRoute.snapshot.queryParams;
+    if (params) {
+
+      this.filtersFG.patchValue({
+        ...params
+      });
+    }
+  }
+
+  private _updateUrlQueryParams(category: string, industry: string): void {
+    this._router.navigate([], {
+      queryParams: {
+        category, industry
+      },
+      queryParamsHandling: 'merge',
+    });
+  }
+
+  private _buildFilters(): void {
+    for (const element of this.cases) {
+      this.industries.add(element.industry);
+      this.categories.add(element.category);
+    }
+  }
+
+  private _listenForFilters(): void {
+    this.filtersFG.valueChanges
+      .subscribe({
+        next: (formValue) => {
+
+          this._updateUrlQueryParams(formValue.category, formValue.industry);
+
+          // no filters
+          if (!formValue.category && !formValue.industry) {
+            return;
+          }
+
+          // both filters
+          if (formValue.category && formValue.industry) {
+            this.displayedCases = this.displayedCases.filter(c => c.category === formValue.category && c.industry === formValue.industry);
+            return;
+          }
+
+          if (formValue.category && !formValue.industry) {
+            this.displayedCases = this.displayedCases.filter(c => c.category === formValue.category);
+            return;
+          }
+
+          if (formValue.industry) {
+            this.displayedCases = this.displayedCases.filter(c => c.industry === formValue.industry);
+            return;
+          }
+        }
+      });
   }
 
   getSlicedCases(startIndex: number, numberOfElements: number): CaseReadDto[] {
@@ -135,6 +116,6 @@ export class LandingIndexPage implements OnInit {
     if (this.cases.length < endIndex) {
       endIndex = this.cases.length;
     }
-    return this.cases.slice(startIndex, endIndex);
+    return this.displayedCases.slice(startIndex, endIndex);
   }
 }

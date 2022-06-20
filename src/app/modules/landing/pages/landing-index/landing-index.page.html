@@ -1,11 +1,31 @@
 <app-hero [case]="cases[0]"></app-hero>
 
-<app-cases-grid [cases]="getSlicedCases(0, 4)"></app-cases-grid>
-<app-cases-featured-grid [cases]="getSlicedCases(4, 3)" featuredPosition="left"></app-cases-featured-grid>
-<app-cases-grid [cases]="getSlicedCases(8, 2)"></app-cases-grid>
-<app-cases-featured-grid [cases]="getSlicedCases(10, 3)" featuredPosition="right"></app-cases-featured-grid>
+<div class="-filters" [formGroup]="filtersFG">
+  <div class="-filter">
+    in
+    <select formControlName="industry">
+      <option [value]="''">all industries</option>
+      <option *ngFor="let industry of industries" [value]="industry">{{industry}}</option>
+    </select>
+  </div>
+  <div class="-filter">
+    Show me
+    <select formControlName="category">
+      <option [value]="''">all work</option>
+      <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+    </select>
+  </div>
+</div>
 
-<div class="line-separator hide-mobile"></div>
+<app-cases-grid [cases]="getSlicedCases(0, 4)"></app-cases-grid>
+<app-cases-featured-grid [cases]="getSlicedCases(4, 3)" featuredPosition="left">
+</app-cases-featured-grid>
+<app-cases-grid [cases]="getSlicedCases(8, 2)"></app-cases-grid>
+<app-cases-featured-grid [cases]="getSlicedCases(10, 3)" featuredPosition="right">
+</app-cases-featured-grid>
+
+<div class=" line-separator hide-mobile">
+</div>
 <div class="-quote">
   <div class="-text">
     “Dept helped us tell our story through a bold new identity and a robust online experience. To the tone of 60% growth in

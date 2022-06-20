@@ -1,10 +1,12 @@
-<div class="-container" [class.--compact]="type === 'compact'">
+<a [routerLink]="case?.routerLink">
+  <div class="-container" [class.--compact]="type === 'compact'">
 
-  <div class="-image" [style.backgroundImage]="'url('+ case?.imageUrl +')'" *ngIf="type !== 'compact'"></div>
-  <div class="-industry">{{case?.industry}}</div>
-  <div class="-title">{{case?.title}}</div>
-  <a [href]="case?.routerLink" class="-action hide-mobile">
-    <img src="assets/icons/icon__arrow-link.svg" class="me-2">
-    VIEW CASE
-  </a>
-</div>
+    <div class="-image" [style.backgroundImage]="'url('+ case?.imageUrl +')'" *ngIf="type !== 'compact'"></div>
+    <div class="-industry">{{case?.industry}}</div>
+    <div class="-title">{{case?.title}}</div>
+    <a [href]="case?.routerLink" class="-action hide-mobile">
+      <img src="assets/icons/icon__arrow-link.svg" class="me-2">
+      VIEW CASE
+    </a>
+  </div>
+</a>

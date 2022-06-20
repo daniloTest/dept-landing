@@ -1,9 +1,6 @@
 @import '~src/styles/partials/consts';
 @import '~src/styles/partials/mixins';
 
-$topbar-height: 85px;
-$topbar-height-mobile: 56px;
-
 .-topbar-container {
   position: fixed;
   height: $topbar-height;

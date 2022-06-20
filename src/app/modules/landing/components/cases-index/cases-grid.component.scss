@@ -2,11 +2,11 @@
 @import '~src/styles/partials/mixins';
 
 :host {
-  padding: 0 21px 50px 21px;
   display: block;
 }
 
 .-cases-grid {
+  padding: 0 21px 50px 21px;
   display: flex;
   flex-wrap: wrap;
 

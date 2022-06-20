@@ -85,7 +85,7 @@ $color-link-separator: #a3a3a3;
 
   .-countries-menu {
     position: absolute;
-    left: 40px;
+    left: $padding-base;
     background-color: $color-dark;
     padding-right: 20px;
     min-width: 20%;

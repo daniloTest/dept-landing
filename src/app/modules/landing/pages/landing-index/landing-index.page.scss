@@ -1,5 +1,37 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+
 :host {
   display: block;
+}
+
+.-filters {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 70px $padding-base;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px $padding-base;
+  }
+  .-filter {
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 43px;
+    color: #a3a3a3;
+
+    select {
+      font-family: 'Teko' !important;
+      option {
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+  }
 }
 
 .-quote {

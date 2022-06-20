@@ -1,15 +1,16 @@
-<div class="-container" [class.flex-row-reverse]="featuredPosition === 'right'">
+<div class="-container" [class.flex-row-reverse]="featuredPosition === 'right'" *ngIf="cases.length">
 
-  <div class="-col -col--featured">
+  <div class=" -col -col--featured">
 
-    <app-case [case]="cases[0]"></app-case>
+    <app-case *ngIf="cases[0]" [case]="cases[0]"></app-case>
   </div>
 
   <div class="-col -col--compact">
-    <div class="line-separator"></div>
-    <app-case [case]="cases[1]" type="compact" class="-item"></app-case>
-    <div class="line-separator"></div>
-    <app-case [case]="cases[2]" type="compact" class="-item"></app-case>
-    <div class="line-separator"></div>
+    <div class="line-separator" *ngIf="cases[1]"></div>
+    <app-case *ngIf="cases[1]" [case]="cases[1]" type="compact" class="-item"></app-case>
+    <div class="line-separator" *ngIf="cases[1]"></div>
+    <app-case *ngIf=" cases[2]" [case]="cases[2]" type="compact" class="-item">
+    </app-case>
+    <div class="line-separator" *ngIf=" cases[2]"></div>
   </div>
 </div>

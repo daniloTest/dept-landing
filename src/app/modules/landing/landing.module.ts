@@ -12,6 +12,7 @@ import { SectionContactComponent } from './components/section-contact/section-co
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -29,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     LandingRoutingModule,
     SharedModule,
+    RouterModule,
 
     MatFormFieldModule,
     ReactiveFormsModule,

@@ -1,7 +1,9 @@
 <div class="-menu" [class.--closed]="!isOpen">
 
   <div class="-header">
-    <img src="assets/icons/dept-logo-white.svg" class="-logo">
+    <a href="/">
+      <img src="assets/icons/dept-logo-white.svg" class="-logo">
+    </a>
     <button class="dept-btn dept-btn--transparent" (click)="toggleMenu.emit()">
       <img src="assets/icons/icon__close.svg">
     </button>
@@ -11,22 +13,22 @@
 
     <nav class="-countries-menu">
       <div class="-title">Countries</div>
-      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="global" (click)="toggleMenu.emit()">
         GLOBAL
       </a>
-      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="nederland" (click)="toggleMenu.emit()">
         NEDERLAND
       </a>
-      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="united-states" (click)="toggleMenu.emit()">
         UNITED STATES
       </a>
-      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="ireland" (click)="toggleMenu.emit()">
         IRELAND
       </a>
-      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="united-kingdom" (click)="toggleMenu.emit()">
         UNITED KINGDOM
       </a>
-      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="home">
+      <a class=" -link link-with-selector" routerLinkActive="active" routerLink="schwez" (click)="toggleMenu.emit()">
         SCHWEZ
       </a>
 
@@ -36,43 +38,43 @@
     <nav class="-pages-menu">
       <!-- LINK -->
       <div class="-link-container">
-        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home" (click)="toggleMenu.emit()">
           <div class="-label">HOME</div>
         </a>
       </div>
       <!-- LINK -->
       <div class="-link-container">
-        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home" (click)="toggleMenu.emit()">
           <div class="-label">WORK</div>
         </a>
       </div>
       <!-- LINK -->
       <div class="-link-container">
-        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home" (click)="toggleMenu.emit()">
           <div class="-label">CULTURE</div>
         </a>
       </div>
       <!-- LINK -->
       <div class="-link-container">
-        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home" (click)="toggleMenu.emit()">
           <div class="-label">SERVICES</div>
         </a>
       </div>
       <!-- LINK -->
       <div class="-link-container">
-        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home" (click)="toggleMenu.emit()">
           <div class="-label">PARTNERS</div>
         </a>
       </div>
       <!-- LINK -->
       <div class="-link-container">
-        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home" (click)="toggleMenu.emit()">
           <div class="-label">EVENTS</div>
         </a>
       </div>
       <!-- LINK -->
       <div class="-link-container">
-        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home">
+        <a class="-page-link link-with-selector" routerLinkActive="active" routerLink="home" (click)="toggleMenu.emit()">
           <div class="-label">CONTACTS</div>
         </a>
       </div>
@@ -80,10 +82,10 @@
 
     <!-- SOCIAL MENU-->
     <nav class="-social-menu">
-      <a class="-link">FACEBOOK</a>
-      <a class="-link">TWITTER</a>
-      <a class="-link">INSTAGRAM</a>
-      <a class="-link">LINKEDIN</a>
+      <a class="-link  link-with-selector" href="http://www.facebook.com" target="_blank" (click)="toggleMenu.emit()">FACEBOOK</a>
+      <a class="-link  link-with-selector" href="http://www.twitter.com" target="_blank" (click)="toggleMenu.emit()">TWITTER</a>
+      <a class="-link  link-with-selector" href="http://www.instagram.com" target="_blank" (click)="toggleMenu.emit()">INSTAGRAM</a>
+      <a class="-link  link-with-selector" href="http://www.linkedin.com" target="_blank" (click)="toggleMenu.emit()">LINKEDIN</a>
     </nav>
   </div>
 </div>

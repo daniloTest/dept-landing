@@ -9,6 +9,10 @@ $padding-compact: 6px;
   width: 100%;
   display: block;
   padding: 16px;
+
+  @include mobile {
+    padding: 16px 0;
+  }
 }
 
 .-container {
