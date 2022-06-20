@@ -1,0 +1,48 @@
+<div class="-title">
+  QUESTIONS? <br />
+  WE ARE HERE TO HELP
+</div>
+
+<form [formGroup]="form" class="-form">
+  <div class="-row">
+
+    <div class="-col">
+      <div class="-label">NAME</div>
+      <mat-form-field class="w-100">
+        <input matInput formControlName="name">
+        <mat-error *ngIf="form.get('email')?.hasError('required')" class="-error">This field is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="-col">
+      <div class="-label">EMAIL</div>
+      <mat-form-field class="w-100">
+
+        <input matInput formControlName="email">
+        <mat-error *ngIf="form.get('email')?.hasError('required')" class="-error">This field is required</mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('email')" class="-error">Not a valid email</mat-error>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="-row">
+
+    <div class="-col">
+      <div class="-label">MESSAGE</div>
+      <mat-form-field class="w-100">
+        <textarea matInput formControlName="message" rows="6" cols="20"></textarea>
+        <mat-error *ngIf="form.get('email')?.hasError('required')" class="-error">This field is required</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <div class="-col"></div>
+  </div>
+  <div class="-row">
+
+    <button class="dept-btn dept-btn--primary" (click)="submit()">SEND</button>
+
+  </div>
+
+</form>

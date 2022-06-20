@@ -1,0 +1,57 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+
+:host {
+  display: flex;
+  padding: 70px $padding-base;
+  gap: 60px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .-title {
+    flex: 0 0 30%;
+    font-family: 'Teko';
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 86px;
+  }
+
+  .-form {
+    flex: 1 1 70%;
+
+    .-row {
+      padding: 30px 0;
+      display: flex;
+      gap: 35px;
+
+      @include mobile {
+        flex-direction: column;
+      }
+
+      .-col {
+        flex: 1;
+      }
+
+      .-label {
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      input,
+      textarea {
+        border-bottom: 1px solid #dddddd;
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.-error {
+  color: #ff2929;
+  padding: 5px 0;
+  font-size: 13px;
+  line-height: 15px;
+}

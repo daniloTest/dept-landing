@@ -7,6 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsSectionComponent implements OnInit {
 
+  clientLogos: string[] = [
+    'nivea',
+    'mona',
+    'nivea',
+    'mona',
+    'nivea',
+    'mona',
+    'nivea',
+    'mona',
+    'nivea',
+    'mona',
+    'nivea',
+    'mona',
+    'nivea',
+    'mona',
+    'nivea',
+    'mona',
+  ];
   constructor() { }
 
   ngOnInit(): void {

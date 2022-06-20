@@ -1,0 +1,52 @@
+@import '~src/styles/partials/consts';
+@import '~src/styles/partials/mixins';
+:host {
+  display: block;
+  padding: 70px;
+  background-color: #f0f4f4;
+  width: 100%;
+  text-align: center;
+}
+
+.-title {
+  color: $color-black;
+  font-family: 'Teko';
+
+  font-size: 60px;
+  line-height: 86px;
+}
+
+.-description {
+  font-size: 17px;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.-logos {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 55px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .-logo {
+    flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+
+    img {
+      margin: 0 auto;
+      width: auto;
+      height: auto;
+    }
+
+    @include mobile {
+      flex: 0 0 50%;
+    }
+  }
+}

@@ -8,6 +8,10 @@ import { CaseComponent } from './components/case/case.component';
 import { CasesGridComponent } from './components/cases-index/cases-grid.component';
 import { CasesFeaturedGridComponent } from './components/cases-featured-grid/cases-featured-grid.component';
 import { ClientsSectionComponent } from './components/clients-section/clients-section.component';
+import { SectionContactComponent } from './components/section-contact/section-contact.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,12 +22,17 @@ import { ClientsSectionComponent } from './components/clients-section/clients-se
     CasesGridComponent,
     CaseComponent,
     CasesFeaturedGridComponent,
-    ClientsSectionComponent
+    ClientsSectionComponent,
+    SectionContactComponent,
   ],
   imports: [
     CommonModule,
     LandingRoutingModule,
     SharedModule,
+
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
 
   ]
 })

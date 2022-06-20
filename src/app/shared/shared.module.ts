@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './components/menu/menu.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { NotFoundPage } from './pages/not-found/not-found.page';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -10,7 +11,8 @@ import { NotFoundPage } from './pages/not-found/not-found.page';
   declarations: [
     MenuComponent,
     TopbarComponent,
-    NotFoundPage
+    NotFoundPage,
+    FooterComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { NotFoundPage } from './pages/not-found/not-found.page';
   exports: [
     NotFoundPage,
     TopbarComponent,
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
