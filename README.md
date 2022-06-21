@@ -5,8 +5,8 @@
 
 This project was generated with:
 - [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
-- Package manager: [Yarn](https://yarnpkg.com/)
-- NodeJS: v16.14.0
+- [Yarn](https://yarnpkg.com/)
+- [NodeJs](https://nodejs.org/) version 16.14.0
 
 ## Initial setup
 1. Install the LTS of [NodeJs](https://nodejs.org/en/). 
