@@ -81,6 +81,7 @@ export class LandingIndexPage implements OnInit {
         next: (formValue) => {
 
           this._updateUrlQueryParams(formValue.category, formValue.industry);
+          this.displayedCases = [...this.cases];
 
           // no filters
           if (!formValue.category && !formValue.industry) {

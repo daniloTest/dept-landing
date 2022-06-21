@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-not-found',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found.page.scss']
 })
 export class NotFoundPage implements OnInit {
+
+  ENV = environment;
 
   constructor() { }
 
