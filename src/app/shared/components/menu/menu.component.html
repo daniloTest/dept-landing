@@ -1,7 +1,7 @@
 <div class="-menu" [class.--closed]="!isOpen">
 
   <div class="-header">
-    <a href="/">
+    <a [href]="BASE_URL">
       <img src="assets/icons/dept-logo-white.svg" class="-logo">
     </a>
     <button class="dept-btn dept-btn--transparent" (click)="toggleMenu.emit()">

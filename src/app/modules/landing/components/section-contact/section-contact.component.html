@@ -3,7 +3,7 @@
   WE ARE HERE TO HELP!
 </div>
 
-<form [formGroup]="form" class="-form">
+<form [formGroup]="form" class="-form" *ngIf="!successCallToEp; else success">
   <div class="-row">
 
     <div class="-col">
@@ -26,6 +26,7 @@
 
   </div>
 
+
   <div class="-row">
 
     <div class="-col">
@@ -46,3 +47,9 @@
   </div>
 
 </form>
+
+<ng-template #success>
+  <div class="-success">
+    Your message was sent successfully!
+  </div>
+</ng-template>

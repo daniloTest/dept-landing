@@ -8,6 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SectionContactComponent implements OnInit {
 
+  successCallToEp: boolean = false;
+
   form: FormGroup = new FormGroup({
     name: new FormControl(null, Validators.required),
     email: new FormControl(null, [Validators.required, Validators.email]),
@@ -26,7 +28,7 @@ export class SectionContactComponent implements OnInit {
     }
 
     // TODO call EP to send contact
-    throw new Error('Funzione non implementata');
+    this.successCallToEp = true;
   }
 
 }
