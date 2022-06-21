@@ -16,5 +16,5 @@ This project was generated with:
 5. The app will be available at http://localhost:4200/ by default.
 6. Enjoy!
 
-# Author
+## Author
 Danilo Colella
