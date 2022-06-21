@@ -26,9 +26,11 @@
 
     select {
       font-family: 'Teko' !important;
+      border-bottom: 2px solid black;
       option {
         font-style: normal;
         font-weight: 400;
+        font-size: 16px;
       }
     }
   }
